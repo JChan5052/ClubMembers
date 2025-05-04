@@ -14,7 +14,9 @@ public ArrayList<MemberInfo> removeMembers(int year){
 ArrayList<MemberInfo> ret=new ArrayList<MemberInfo>();
 for (int i=0;i<memberList.size();i++){
     if ((memberList.get(i)).getGradYear()<year){
+        if (memberList.get(i).inGoodStanding()==true){
         ret.add(memberList.get(i));
+        }
         memberList.remove(i);
         i--;
     }
